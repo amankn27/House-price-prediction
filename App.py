@@ -5,10 +5,9 @@ import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Page Config
 st.set_page_config(page_title="House Price Prediction", layout="wide")
 
-st.title("🏠 California House Price Prediction App")
+st.title("California House Price Prediction App")
 
 # Load Model
 @st.cache_resource
@@ -17,7 +16,6 @@ def load_model():
 
 model = load_model()
 
-# Sidebar Inputs
 st.sidebar.header("Enter House Details")
 
 longitude = st.sidebar.number_input("Longitude", value=-122.23)
@@ -59,11 +57,7 @@ if st.button("Predict Price"):
     st.success(f"Predicted Price (USD): ${round(prediction, 2)}")
     st.success(f"Predicted Price (INR): ₹ {round(prediction_inr, 2)}")
 
-# ------------------------------
-# Visualization Section
-# ------------------------------
-
-st.subheader("📊 Dataset Visualization")
+st.subheader("Dataset Visualization")
 
 data = pd.read_csv("Housing.csv")
 
@@ -84,3 +78,4 @@ with col2:
         palette="coolwarm"
     )
     st.pyplot(fig2)
+
