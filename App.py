@@ -7,7 +7,7 @@ import seaborn as sns
 
 st.set_page_config(page_title="House Price Prediction", layout="wide")
 
-st.title("California House Price Prediction App")
+st.title("House Price Prediction App")
 
 # Load Model
 @st.cache_resource
@@ -78,4 +78,5 @@ with col2:
         palette="coolwarm"
     )
     st.pyplot(fig2)
+
 
